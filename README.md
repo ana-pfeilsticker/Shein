@@ -14,7 +14,7 @@ A branch master é a branch principal antes de ser enviado o projeto para a Main
 Commit do seu progresso na **Branch específica do projeto** --> Após a finalização das atividades/issues da Branch específica do projeto, enviar para a **Branch Master** --> Após a finalização de todo o projeto, enviamos para a **Main** e fazemos os testes finais
 
 ## Branches de Feature / Branch específica do projeto: 
-Cada nova funcionalidade ou feature a ser implementada no projeto deve ter sua própria branch de feature. As branches de feature devem ter nomes descritivos e relacionados à funcionalidade em questão, por exemplo “Branch-Gamificacao” sendo a branch da feature de todas as questões de desenvolvimento do projeto em reação a gamificação ou “Branch-Buttons” sendo a branch da feature de criação dos botões de escolha das respostas do questionário e o balão de conversa da Gloria. 
+Cada nova funcionalidade ou feature a ser implementada no projeto deve ter sua própria branch de feature. As branches de feature devem ter nomes descritivos e relacionados à funcionalidade em questão, por exemplo “Branch-Produto", onde implementaremos a classe Produto e faremos suas correções.
 
  *Como criar o nome da sua Branch específica*
 Coloque o nome “Branch” no início, adicionando um traço “ - “ e por fim, uma palavra específica que defina qual o objetivo principal a ser feito naquela branch! Como os exemplos citados acima.
