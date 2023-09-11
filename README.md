@@ -21,13 +21,13 @@ Coloque o nome “Branch” no início, adicionando um traço “ - “ e por fi
 SEMPRE, antes de trabalhar na branch específica do seu projeto, deem **Git Pull** antes de qualquer alteração que queiram fazer
 
 ## No Git Flow, existem algumas linhas de código importantes que desempenham um papel fundamental no fluxo de trabalho. Aqui estão algumas delas:
-git clone: Essa linha de código é usada para clonar um repositório Git existente para o seu ambiente de desenvolvimento local. É útil quando você deseja começar a contribuir para um projeto existente.
-git branch: Essa linha de código permite criar, listar ou excluir branches. No Git Flow, os branches são usados para separar o trabalho em diferentes recursos ou tarefas. É importante criar branches específicas para cada funcionalidade ou correção de bug.
-git checkout: Essa linha de código é usada para alternar entre branches. É comum alternar para um branch específico antes de começar a trabalhar em uma nova funcionalidade ou correção.
-git add .: Essa linha de código permite adicionar arquivos ao próximo commit. É importante selecionar apenas os arquivos relevantes para a funcionalidade ou correção que está sendo desenvolvida.
-git commit: Essa linha de código é usada para criar um novo commit, registrando as alterações feitas nos arquivos. Cada commit deve ser claro e descritivo, indicando o que foi alterado e por quê.
-git push: Essa linha de código é usada para enviar os commits locais para um repositório remoto. É essencial fazer push regularmente para manter o repositório atualizado e permitir que outros membros da equipe acessem as alterações.
-git pull: Essa linha de código é usada para buscar as alterações mais recentes de um repositório remoto e mesclá-las com o seu branch local. É útil quando você deseja atualizar seu ambiente de trabalho com as alterações feitas por outros membros da equipe.
+git clone: Essa linha de código é usada para clonar um repositório Git existente para o seu ambiente de desenvolvimento local. É útil quando você deseja começar a contribuir para um projeto existente. <br>
+git branch: Essa linha de código permite criar, listar ou excluir branches. No Git Flow, os branches são usados para separar o trabalho em diferentes recursos ou tarefas. É importante criar branches específicas para cada funcionalidade ou correção de bug. <br>
+git checkout: Essa linha de código é usada para alternar entre branches. É comum alternar para um branch específico antes de começar a trabalhar em uma nova funcionalidade ou correção. <br>
+git add .: Essa linha de código permite adicionar arquivos ao próximo commit. É importante selecionar apenas os arquivos relevantes para a funcionalidade ou correção que está sendo desenvolvida. <br>
+git commit: Essa linha de código é usada para criar um novo commit, registrando as alterações feitas nos arquivos. Cada commit deve ser claro e descritivo, indicando o que foi alterado e por quê. <br>
+git push: Essa linha de código é usada para enviar os commits locais para um repositório remoto. É essencial fazer push regularmente para manter o repositório atualizado e permitir que outros membros da equipe acessem as alterações. <br>
+git pull: Essa linha de código é usada para buscar as alterações mais recentes de um repositório remoto e mesclá-las com o seu branch local. É útil quando você deseja atualizar seu ambiente de trabalho com as alterações feitas por outros membros da equipe. <br>
 
 ## Como deve ser feita a revisão das branches, criando o pull request e como fazer isso no git, como revisar e quando se pode dar merge com a main?
 A revisão das branches no Git geralmente é feita por meio do uso de pull requests. Aqui está um passo a passo sobre como fazer a revisão das branches, criar um pull request e, em seguida, revisar e decidir quando realizar o merge com a branch principal, como a main:
