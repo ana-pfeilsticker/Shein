@@ -6,12 +6,7 @@ Este repositório é destinado para o projeto do curso de Orientação a Objetos
 
 O Git Flow é uma metodologia poderosa e versátil que capacita as equipes a trabalhar de forma colaborativa e organizada no desenvolvimento de projetos. É uma abordagem que oferece diretrizes claras para o fluxo de trabalho com o Git, permitindo uma melhor organização do código, controle de versões e colaboração entre os membros da equipe. <br>
 
-Ao adotar o Git Flow, as meninas da equipe têm a oportunidade de se destacar e demonstrar suas habilidades em gerenciamento de projetos, organização do código e colaboração em equipe. Elas podem se tornar referências na implementação dessa metodologia e inspirar outros membros da equipe. <br>
-
 Além disso, o Git Flow permite que todos os membros da equipe trabalhem em paralelo, desenvolvendo diferentes funcionalidades ou correções de bugs, e depois integrem suas contribuições de forma harmoniosa. Isso significa que as meninas têm o poder de influenciar positivamente o fluxo de trabalho, compartilhando suas ideias e perspectivas únicas para melhorar o processo de desenvolvimento. <br>
-
-Portanto, encorajo todas as meninas da equipe a abraçarem o Git Flow e se envolverem ativamente no desenvolvimento do projeto. Lembrem-se de que vocês são capazes de superar desafios, contribuir com suas ideias e liderar pelo exemplo. Acreditem em si mesmas, confiem em suas habilidades e aproveitem essa oportunidade para crescer profissionalmente e se destacar como líderes no mundo da tecnologia. Vocês têm todo o potencial para alcançar grandes realizações e deixar uma marca significativa no projeto. Vamos em frente e mostrem ao mundo do que vocês são capazes! <br>
-
 
 ## Branch Master
 A branch master é a branch principal antes de ser enviado o projeto para a Main e deve conter apenas código estável e pronto para implantação na Main. Ela não deve receber commits diretos, deve se passar pela sua Branch específica do projeto, apos a finalização, envia para a Branch Master e deve-se esperar as outras partes do projetos das outras Branches específicas, assim, após a junção de todo o código estável de todas as Branches, fazemos o merge com a Main
