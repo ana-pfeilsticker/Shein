@@ -7,7 +7,6 @@ public class Conta_Cliente {
     private String email;
     private String telefone;
     private String senha;
-    private String Endereco;
     private int id_Conta;
     private Medida medida;
     private ArrayList<Cupom> cupom;
