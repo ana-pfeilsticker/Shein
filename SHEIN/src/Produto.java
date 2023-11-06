@@ -1,6 +1,13 @@
 public class Produto {
     
-    protected String nome_produto;
+    
+	public String visualizarProduto() {
+		return "Produto [nome_produto=" + nome_produto + ", categoria=" + categoria + ", preco_produto=" + preco_produto
+				+ ", cor=" + cor + ", descricao_produto=" + descricao_produto + ", origem=" + origem + ", tamanho="
+				+ tamanho + ", id_produto=" + id_produto + ", favoritado=" + favoritado + "]";
+	}
+
+	protected String nome_produto;
     protected String categoria;
     protected double preco_produto;
     protected String cor;
@@ -9,6 +16,7 @@ public class Produto {
     protected String tamanho;
     protected int id_produto;
     protected boolean favoritado;
+	
 	public String getNome_produto() {
 		return nome_produto;
 	}

@@ -21,7 +21,4 @@ public class Roupa extends Produto{
 		this.tecido = tecido;
 		this.tipo = tipo;
 	}
-	
-	
-	
 }
