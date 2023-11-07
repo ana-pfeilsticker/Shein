@@ -1,11 +1,4 @@
 public class Produto {
-    
-    
-	public String visualizarProduto() {
-		return "Produto [nome_produto=" + nome_produto + ", categoria=" + categoria + ", preco_produto=" + preco_produto
-				+ ", cor=" + cor + ", descricao_produto=" + descricao_produto + ", origem=" + origem + ", tamanho="
-				+ tamanho + ", id_produto=" + id_produto + ", favoritado=" + favoritado + "]";
-	}
 
 	protected String nome_produto;
     protected String categoria;
@@ -84,5 +77,11 @@ public class Produto {
 		this.tamanho = tamanho;
 		this.id_produto = id_produto;
 		this.favoritado = favoritado;
+	}
+
+	public String visualizarProduto() {
+		return "Produto: " + nome_produto + ", Categoria: " + categoria + ", Preco: " + preco_produto
+				+ ", Cor: " + cor + ", Descricao: " + descricao_produto + ", Origem: " + origem + ", Tamanho: "
+				+ tamanho + ", id: " + id_produto;
 	}
 }

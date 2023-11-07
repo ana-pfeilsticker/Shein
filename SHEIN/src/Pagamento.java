@@ -1,12 +1,12 @@
 public class Pagamento {
     
-    private int num_cartao;
+    private String num_cartao;
     private String nome_titular;
     private String bandeira;
     private String vencimento;
     private int cod_seg;
 
-    public Pagamento(int num_cartao, String nome_titular, String bandeira, String vencimento, int cod_seg) {
+    public Pagamento(String num_cartao, String nome_titular, String bandeira, String vencimento, int cod_seg) {
         this.num_cartao = num_cartao;
         this.nome_titular = nome_titular;
         this.bandeira = bandeira;
@@ -14,10 +14,10 @@ public class Pagamento {
         this.cod_seg = cod_seg;
     }
 
-    public int getNum_cartao() {
+    public String getNum_cartao() {
         return num_cartao;
     }
-    public void setNum_cartao(int num_cartao) {
+    public void setNum_cartao(String num_cartao) {
         this.num_cartao = num_cartao;
     }
     public String getNome_titular() {
