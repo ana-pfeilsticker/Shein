@@ -9,8 +9,27 @@ public class Main{
         
         Bolsa a = new Bolsa("null", "null", 0, "null", "null", "null", "null", 0, false, "null", "null");
         System.out.println(a.visualizarProduto());
-        */
         
+        Pagamento a = new Pagamento();
+        if(a.adicionarPagamento("1234123412341234", "Vitor Valerio Hoffmann", "MasterCard","08/25",103)){
+            System.out.println(a.toString());
+        }else{
+            System.out.println("Erro ao criar pagamento!");
+        }
+        a.excluirPagamento(a);
+        System.out.println(a.toString());
+
+        ArrayList<Pagamento> pagamentos = new ArrayList<Pagamento>();
+        Pagamento b = new Pagamento();
+        Pagamento c = new Pagamento();
+        b.adicionarPagamento("1234123412341234", "Vitor Valerio Hoffmann", "MasterCard","08/25",103);
+        c.adicionarPagamento("1234123412341234", "Valerio Hoffmann", "MasterCard","08/25",103);
+        pagamentos.add(b);
+        pagamentos.add(c);
+        Conta_Cliente conta = new Conta_Cliente(pagamentos);
+        System.out.println(conta.toString());
+        */
+
 
     }
 }

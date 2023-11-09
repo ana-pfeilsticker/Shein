@@ -13,5 +13,4 @@ public class Conta_Cliente {
     private ArrayList<Endereco> enderecos = new ArrayList<Endereco>();
     private ArrayList<Pagamento> pagamentos = new ArrayList<Pagamento>();
     
-
 }
