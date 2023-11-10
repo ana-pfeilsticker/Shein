@@ -28,8 +28,9 @@ public class Main{
         pagamentos.add(c);
         Conta_Cliente conta = new Conta_Cliente(pagamentos);
         System.out.println(conta.toString());
+        Cupom c = new Cupom("null", 0, "null", 0, 0);
+        System.out.println(c.toString());
         */
-
 
     }
 }
