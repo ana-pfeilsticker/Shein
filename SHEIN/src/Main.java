@@ -28,8 +28,6 @@ public class Main{
         pagamentos.add(c);
         Conta_Cliente conta = new Conta_Cliente(pagamentos);
         System.out.println(conta.toString());
-<<<<<<< HEAD
-
         Conta_Cliente conta1 = new Conta_Cliente("null", "null", "null", "null", "null", 0);
         conta1.setBraco(31);
         conta1.setBusto(86.5);
@@ -37,12 +35,10 @@ public class Main{
         conta1.setComprimento_perna(86);
         conta1.setQuadril(81);
         System.out.println(conta1.retornar_tamanho());
-        */
-=======
+
         Cupom c = new Cupom("null", 0, "null", 0, 0);
         System.out.println(c.toString());
         */
-
->>>>>>> 71a519826e253751321ffe78881d028e7fa99cf7
+        
     }
 }
