@@ -9,21 +9,20 @@ public class Pagamento {
     public boolean adicionarPagamento(String num_cartao, String nome_titular, String bandeira, String vencimento, int cod_seg) {
         StringBuilder num_format = new StringBuilder();
         
-        int j = 0;
+        int contador_letra = 0;
         for (int i = 0; i < num_cartao.length(); i++){
             char c = num_cartao.charAt(i);
             if (Character.isLetter(c)){
-                j++;
+                contador_letra++;
             }
         }
-        if (num_cartao != null && num_cartao.length() == 16 && j == 0){
+        if (num_cartao != null && num_cartao.length() == 16 && contador_letra == 0){
             for (int i = 0; i < 16; i += 4) {
                 if (i > 0) {
                     num_format.append("-");
                 }
                 num_format.append(num_cartao.substring(i, i + 4));
             }
-
             num_cartao = num_format.toString();
             this.num_cartao = num_cartao;
             this.nome_titular = nome_titular;
