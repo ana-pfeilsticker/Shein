@@ -89,4 +89,40 @@ public class Dados {
     public ArrayList<String> visualizar(){
         return telefone;
     }
+
+    //mostra todos os produtos
+	public static void listaProdutos(ArrayList<Produto> produtos) {
+		for(Produto produto : produtos)
+			System.out.println(produto);
+	} 
+	
+	
+	//buscar prosutos por categoria
+	public static void buscarCategoria(ArrayList<Produto> produtos, String categoria) {
+		for(Produto produto : produtos)
+			if(produto.getCategoria() == categoria) {
+				System.out.println(produto);
+			}
+	}
+	
+	
+	//buscar produtos por nome
+	public static void buscarNome(ArrayList<Produto> produtos, String nome_produto) {
+		for(Produto produto : produtos)
+			if(produto.getNome_produto() == nome_produto) {
+				System.out.println(produto);
+			}
+	}
+	
+	
+	//conta quantos objetos foram adicionados por nome
+	/*public static int quantidade_estoque(ArrayList<Produto> produtos, String nome_produto) {
+		int quantidade = 0;
+		for(Produto produto : produtos)
+			if(produto.getNome_produto() == nome_produto)
+				quantidade++;
+		
+		return quantidade;
+	}*/
+
 }

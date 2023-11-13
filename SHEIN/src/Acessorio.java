@@ -23,5 +23,9 @@ public class Acessorio extends Produto{
 		this.tipo = tipo;
 	}
 
+	public String visualizarProduto() {
+		return super.visualizarProduto()+", Material: "+getMaterial()+", Tipo: "+getTipo();//+
+				//", Quantidade: "+Estoque.quantidade_estoque(produtos, nome_produto);
+	}
     
 }
