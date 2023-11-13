@@ -9,7 +9,7 @@ public class Endereco {
     private int numero;
     private String estado;
 
-    public void cadastrareditarEndereco(String cep, String pais, String cidade, String bairro, String complemento, int numero,
+    public Endereco(String cep, String pais, String cidade, String bairro, String complemento, int numero,
             String estado, String quadra) {
         this.cep = cep;
         this.pais = pais;

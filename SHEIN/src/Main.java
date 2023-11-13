@@ -41,7 +41,7 @@ public class Main{
         
         Dados a = new Dados();
         a.gerarDADOS();
-        System.out.println(a.visualizar());*/
+        System.out.println(a.visualizar());
         Bolsa q = new Bolsa(null, null, 0, null, null, null, null, 0, false, null, null, 0);
         Bolsa w = new Bolsa(null, null, 0, null, null, null, null, 0, false, null, null, 0);
         Bolsa e = new Bolsa(null, null, 0, null, null, null, null, 0, false, null, null, 0);
@@ -54,6 +54,7 @@ public class Main{
         pedido.adicionarProduto(q);
         pedido.adicionarProduto(w);
         pedido.adicionarProduto(e);
-        System.out.println(pedido.toString());
+        System.out.println(pedido.toString());*/
+        
     }
 }
