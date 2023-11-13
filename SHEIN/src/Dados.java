@@ -25,7 +25,6 @@ public class Dados {
 
     private ArrayList<String> nomes = new ArrayList<String>();
     private ArrayList<String> CPF = new ArrayList<String>();
-
     private ArrayList<String> email = new ArrayList<String>();
     private ArrayList<String> telefone = new ArrayList<String>();
 
@@ -90,29 +89,39 @@ public class Dados {
         return telefone;
     }
 
+
+
+
+    
     //mostra todos os produtos
-	public static void listaProdutos(ArrayList<Produto> produtos) {
-		for(Produto produto : produtos)
-			System.out.println(produto);
-	} 
+	public static String listarProdutos(ArrayList<Produto> produtos) {
+		for(Produto produto : produtos){
+			return produto.toString();
+        }
+        return "Sem produtos";
+    }
 	
 	
 	//buscar prosutos por categoria
-	public static void buscarCategoria(ArrayList<Produto> produtos, String categoria) {
-		for(Produto produto : produtos)
+	public static String buscarCategoria(ArrayList<Produto> produtos, String categoria) {
+		for(Produto produto : produtos){
 			if(produto.getCategoria() == categoria) {
-				System.out.println(produto);
+				return produto.toString();
 			}
-	}
+	    }
+        return "Nao foi encontrado";
+    }
 	
 	
 	//buscar produtos por nome
-	public static void buscarNome(ArrayList<Produto> produtos, String nome_produto) {
-		for(Produto produto : produtos)
+	public static String buscarNome(ArrayList<Produto> produtos, String nome_produto) {
+		for(Produto produto : produtos){
 			if(produto.getNome_produto() == nome_produto) {
-				System.out.println(produto);
+                return produto.toString();
 			}
-	}
+        }
+        return "Nao foi encontrado";
+    }
 	
 	
 	//conta quantos objetos foram adicionados por nome
@@ -124,5 +133,4 @@ public class Dados {
 		
 		return quantidade;
 	}*/
-
 }
