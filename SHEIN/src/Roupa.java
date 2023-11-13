@@ -21,9 +21,9 @@ public class Roupa extends Produto{
 		this.tecido = tecido;
 		this.tipo = tipo;
 	}
-
-	public String visualizarProduto() {
-		return super.visualizarProduto()+", Tecido: "+getTecido()+", Tipo: "+getTipo();//+
+	@Override
+	public String toString() {
+		return "Produto: " +super.toString()+" Tecido: "+getTecido()+" Tipo: "+getTipo()+"\n";//+
 				//", Quantidade: "+Estoque.quantidade_estoque(produtos, nome_produto);
 	}
 }

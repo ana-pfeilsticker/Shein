@@ -86,10 +86,10 @@ public class Produto {
 		this.favoritado = favoritado;
 		this.quantidade_disponivel = quantidade_disponivel;
 	}
-
-	public String visualizarProduto() {
-		return "Produto: " + nome_produto + ", Categoria: " + categoria + ", Preco: " + preco_produto
-				+ ", Cor: " + cor + ", Descricao: " + descricao_produto + ", Origem: " + origem + ", Tamanho: "
-				+ tamanho + ", id: " + id_produto;
+	@Override
+	public String toString() {
+		return nome_produto +"\n"+ " Categoria: " + categoria +"\n"+ " Preco: " + preco_produto
+				+"\n"+ " Cor: " + cor +"\n"+ " Descricao: " + descricao_produto +"\n"+ " Origem: " + origem +"\n"+ " Tamanho: "
+				+ tamanho+"\n" + " id: " + id_produto+"\n";
 	}
 }

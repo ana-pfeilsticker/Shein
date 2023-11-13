@@ -23,8 +23,8 @@ public class Bolsa extends Produto{
 		this.tamanho_alca = tamanho_alca;
 	}
 	
-    public String visualizarProduto() {
-		return super.visualizarProduto()+", Material: "+getMaterial()+", Tamanho da Alça: "+getTamanho_alca();//+
+    public String toString() {
+		return "Produto: "+super.toString()+" Material: "+getMaterial()+"\n"+" Tamanho da Alça: "+getTamanho_alca()+"\n\n";//+
 				//", Quantidade: "+Estoque.quantidade_estoque(produtos, nome_produto);
 	}
 }

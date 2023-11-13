@@ -47,10 +47,13 @@ public class Pedido {
         this.pagamento = pagamento;
         this.produtos = produto;
     }
-    
-    public String visualizarPedido() {
-        return "Pedido \n" + "Valor: " + valor + "\n" + "endereco: " + endereco + "\n" + "Código do pedido: " + cdg_comp + "\n" +"Forma de pagamento: "
-                + pagamento + "\n" +"Produtos: " + produtos;
+    public void adicionarProduto(Produto o){
+        produtos.add(o);
+    }
+    @Override
+    public String toString() {
+        return "Pedido: \n" + "Valor: " + valor + "\n"  + endereco.visualizarEndereco() + "\n" + "Código do pedido: " + cdg_comp + "\n" +"Forma de pagamento: "
+                +"\n"+ pagamento + "\n" +"Produtos: " +"\n\n"+ produtos;
     }
 
     public boolean fecharPedido(){
