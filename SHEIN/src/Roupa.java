@@ -16,8 +16,8 @@ public class Roupa extends Produto{
 		this.tipo = tipo;
 	}
 	public Roupa(String nome_produto, String categoria, double preco_produto, String cor, String descricao_produto,
-			String origem, String tamanho, int id_produto, boolean favoritado, String tecido, String tipo) {
-		super(nome_produto, categoria, preco_produto, cor, descricao_produto, origem, tamanho, id_produto, favoritado);
+			String origem, String tamanho, int id_produto, boolean favoritado, String tecido, String tipo,int quantidade_disponivel) {
+		super(nome_produto, categoria, preco_produto, cor, descricao_produto, origem, tamanho, id_produto, favoritado,quantidade_disponivel);
 		this.tecido = tecido;
 		this.tipo = tipo;
 	}

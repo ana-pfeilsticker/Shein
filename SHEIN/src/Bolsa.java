@@ -17,8 +17,8 @@ public class Bolsa extends Produto{
 	}
 	
 	public Bolsa(String nome_produto, String categoria, double preco_produto, String cor, String descricao_produto,
-			String origem, String tamanho, int id_produto, boolean favoritado, String material, String tamanho_alca) {
-		super(nome_produto, categoria, preco_produto, cor, descricao_produto, origem, tamanho, id_produto, favoritado);
+			String origem, String tamanho, int id_produto, boolean favoritado, String material, String tamanho_alca,int quantidade_disponivel) {
+		super(nome_produto, categoria, preco_produto, cor, descricao_produto, origem, tamanho, id_produto, favoritado,quantidade_disponivel);
 		this.material = material;
 		this.tamanho_alca = tamanho_alca;
 	}

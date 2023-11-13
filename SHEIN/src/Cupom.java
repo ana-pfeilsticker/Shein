@@ -1,4 +1,4 @@
-public abstract class Cupom {
+public class Cupom {
 
     private String nome_cupom;
     private int desconto;

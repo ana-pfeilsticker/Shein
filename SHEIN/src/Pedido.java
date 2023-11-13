@@ -1,101 +1,77 @@
+import java.util.ArrayList;
+
 public class Pedido {
 
 	private int valor;
-    private String Endereco;
+    private Endereco endereco;
     private int cdg_comp;
-    private String Pagamento;
-    private Produto produto;
-    private Conta_Cliente conta;
-    private Cupom cupom;
-
+    private Pagamento pagamento;
+    private ArrayList<Produto> produtos = new ArrayList<Produto>();
+    private boolean finalizado;
 
     public int getValor() {
         return valor;
     }
-
-
     public void setValor(int valor) {
         this.valor = valor;
     }
-
-
-    public String getEndereco() {
-        return Endereco;
+    public Endereco getendereco() {
+        return endereco;
     }
-
-
-    public void setEndereco(String endereco) {
-        Endereco = endereco;
+    public void setendereco(Endereco endereco) {
+        this.endereco = endereco;
     }
-
-
     public int getCdg_comp() {
         return cdg_comp;
     }
-
-
     public void setCdg_comp(int cdg_comp) {
         this.cdg_comp = cdg_comp;
     }
-
-
-    public String getPagamento() {
-        return Pagamento;
+    public Pagamento getPagamento() {
+        return pagamento;
+    }
+    public void setPagamento(Pagamento pagamento) {
+        this.pagamento = pagamento;
+    }
+    public ArrayList<Produto> getProduto() {
+        return produtos;
+    }
+    public void setProduto(ArrayList<Produto> produto) {
+        this.produtos = produto;
     }
 
-
-    public void setPagamento(String pagamento) {
-        Pagamento = pagamento;
-    }
-
-
-    public Produto getProduto() {
-        return produto;
-    }
-
-
-    public void setProduto(Produto produto) {
-        this.produto = produto;
-    }
-
-
-    public Conta_Cliente getConta() {
-        return conta;
-    }
-
-
-    public void setConta(Conta_Cliente conta) {
-        this.conta = conta;
-    }
-
-
-    public Cupom getCupom() {
-        return cupom;
-    }
-
-
-    public void setCupom(Cupom cupom) {
-        this.cupom = cupom;
-    }
-
-
-    public Pedido(int valor, String endereco, int cdg_comp, String pagamento, Produto produto, Conta_Cliente conta,
-            Cupom cupom) {
+    public Pedido(int valor, Endereco endereco, int cdg_comp, Pagamento pagamento, ArrayList<Produto> produto) {
         this.valor = valor;
-        Endereco = endereco;
+        this.endereco = endereco;
         this.cdg_comp = cdg_comp;
-        Pagamento = pagamento;
-        this.produto = produto;
-        this.conta = conta;
-        this.cupom = cupom;
+        this.pagamento = pagamento;
+        this.produtos = produto;
     }
-
-
-    @Override
-    public String toString() {
-        return "Pedido \n" + "Valor: " + valor + "\n" + "Endereco: " + Endereco + "\n" + "Código do pedido: " + cdg_comp + "\n" +"Forma de pagamento: "
-                + Pagamento + "\n" +"Produtos: " + produto + "\n" + "Cupom: " + cupom + "]";
-    }
-
     
+    public String visualizarPedido() {
+        return "Pedido \n" + "Valor: " + valor + "\n" + "endereco: " + endereco + "\n" + "Código do pedido: " + cdg_comp + "\n" +"Forma de pagamento: "
+                + pagamento + "\n" +"Produtos: " + produtos;
+    }
+
+    public boolean fecharPedido(){
+        if(this.endereco != null && this.cdg_comp != 0 && this.pagamento != null && this.produtos != null){
+            if (this.finalizado != true){
+                this.finalizado = true;
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+    }
+
+    public boolean removerPedido(){
+        this.valor = 0;
+        this.endereco = null;
+        this.cdg_comp = 0;
+        this.pagamento = null;
+        this.produtos = null;
+        return true;
+    }
 }

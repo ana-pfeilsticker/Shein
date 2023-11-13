@@ -80,6 +80,5 @@ public class Pagamento {
     }
     public void setCod_seg(int cod_seg) {
         this.cod_seg = cod_seg;
-    }
-   
+    }  
 }

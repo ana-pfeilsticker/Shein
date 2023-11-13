@@ -39,6 +39,8 @@ public class Main{
         Cupom c = new Cupom("null", 0, "null", 0, 0);
         System.out.println(c.toString());
         */
-        
+        Dados a = new Dados();
+        a.gerarDADOS();
+        System.out.println(a.visualizar());
     }
 }

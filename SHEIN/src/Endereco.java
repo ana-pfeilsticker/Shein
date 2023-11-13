@@ -9,7 +9,7 @@ public class Endereco {
     private int numero;
     private String estado;
 
-    public void cadastrarEndereco(String cep, String pais, String cidade, String bairro, String complemento, int numero,
+    public void cadastrareditarEndereco(String cep, String pais, String cidade, String bairro, String complemento, int numero,
             String estado, String quadra) {
         this.cep = cep;
         this.pais = pais;
@@ -19,6 +19,10 @@ public class Endereco {
         this.numero = numero;
         this.estado = estado;
         this.quadra = quadra;
+    }
+
+    public String visualizarEndereco() {
+        return "Endereço:\n"+ quadra +" "+ complemento+" Número "+numero+"\n"+bairro+" "+cidade+"\n"+cep+"\n"+estado + " "+pais;
     }
 
     public void setCep(String cep) {
@@ -48,9 +52,4 @@ public class Endereco {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-
-    public String visualizarEndereco() {
-        return "Endereço:\n"+ quadra +" "+ complemento+" Número "+numero+"\n"+bairro+" "+cidade+"\n"+cep+"\n"+estado + " "+pais;
-    }
-    
 }
