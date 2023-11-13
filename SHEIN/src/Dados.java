@@ -25,6 +25,7 @@ public class Dados {
 
     private ArrayList<String> nomes = new ArrayList<String>();
     private ArrayList<String> CPF = new ArrayList<String>();
+
     private ArrayList<String> email = new ArrayList<String>();
     private ArrayList<String> telefone = new ArrayList<String>();
 
@@ -73,7 +74,7 @@ public class Dados {
             int numeroAleatorio3 = rand.nextInt(67);
             telefonetemp += "(";
             telefonetemp += ddd.get(numeroAleatorio3);
-            telefonetemp += ") 9 ";
+            telefonetemp += ")9";
             for (int j = 0; j < 8; j++){
                 if (j == 4){
                     telefonetemp += "-";
