@@ -9,6 +9,12 @@ public class Pedido {
     private ArrayList<Produto> produtos = new ArrayList<Produto>();
     private boolean finalizado;
 
+    public boolean isFinalizado() {
+        return finalizado;
+    }
+    public void setFinalizado(boolean finalizado) {
+        this.finalizado = finalizado;
+    }
     public int getValor() {
         return valor;
     }
@@ -40,12 +46,13 @@ public class Pedido {
         this.produtos = produto;
     }
 
-    public Pedido(int valor, Endereco endereco, int cdg_comp, Pagamento pagamento, ArrayList<Produto> produto) {
+    public Pedido(int valor, Endereco endereco, int cdg_comp, Pagamento pagamento, ArrayList<Produto> produto, boolean finalizado) {
         this.valor = valor;
         this.endereco = endereco;
         this.cdg_comp = cdg_comp;
         this.pagamento = pagamento;
         this.produtos = produto;
+        this.finalizado = finalizado;
     }
     public void adicionarProduto(Produto o){
         produtos.add(o);

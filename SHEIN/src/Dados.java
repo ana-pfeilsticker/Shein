@@ -18,9 +18,10 @@ public class Dados {
     private ArrayList<Pagamento> pagamentos = new ArrayList<Pagamento>();
     private ArrayList<Produto> produtos = new ArrayList<Produto>();
     private ArrayList<Pedido> pedidos = new ArrayList<Pedido>();
+    private ArrayList<Conta_Cliente> contas = new ArrayList<Conta_Cliente>();
+
 
     public void gerarDADOS(){
-
 
         // gerar cpfs
         String cpftemp = "";
@@ -83,103 +84,122 @@ public class Dados {
 
 
         int idstemp = 0;
-        for (int i = 0; i < 15; i++){
+        
 
 
             //gerar cupons
-            Cupom cupom = new Cupom("Cupom "+(i+1), (i+1)*2, "Descricao "+(i+1), i, i*3);
-            cupons.add(cupom);
+            int d = 0;
+            while (cupons.size() < 15){
+                Cupom cupom = new Cupom("Cupom "+(d+1), (d+1)*2, "Descricao "+(d+1), d, d*3);
+                cupons.add(cupom);
+                d++;
+            }
 
 
             //gerar ids
-            Random random = new Random();
-            idstemp = random.nextInt(1000);
-            ids.add(idstemp);
+            while (ids.size() < 15){
+                Random random = new Random();
+                idstemp = random.nextInt(1000);
+                ids.add(idstemp);
+            }
 
 
             //gerar enderecos
-            Endereco endereco = new Endereco("Cep "+(i+1), "Pais "+(i+1), "Cidade "+(i+1)
-            , "Bairro "+(i+1), "Complemento "+(i+1), i+1, "Estado "+(i+1), "Quadra "+(i+1));
-            enderecos.add(endereco);
-
-
-            //gerar pagamentos
-            Pagamento pagamento = new Pagamento();
-            Random random1 = new Random();
-            String numtemp = "";
-            for (int j = 0; j < 16; j++){
-                numtemp += String.valueOf(random1.nextInt(10));                
-            }
-            pagamento.adicionarPagamento(numtemp, nomes.get(random.nextInt(15)), "Bandeira: "+(i+1), ""+(i+1), (i+1));
-            pagamentos.add(pagamento);
-            
-
-            //gerar produtos
             int j = 0;
-            while (produtos.size() < 15){
-                Bolsa bolsa = new Bolsa("\nBolsa "+(j+1), String.valueOf((j+1)), (j+1)*random.nextInt(20), String.valueOf((j+1)),String.valueOf((j+1)), String.valueOf((j+1))
-                    ,String.valueOf((j+1)), j+1, false, String.valueOf((j+1)), String.valueOf((j+1)), (j+1)*random.nextInt(20));
-                Acessorio acessorio = new Acessorio("\nAcessorio "+(j+1), String.valueOf((j+1)), (j+1)*random.nextInt(20), String.valueOf((j+1)),String.valueOf((j+1)), String.valueOf((j+1))
-                    ,String.valueOf((j+1)), j+1, false, String.valueOf((j+1)), ""+(j+1), (i+1)*random.nextInt(20));
-                Roupa roupa = new Roupa("\nRoupa "+(j+1), String.valueOf((j+1)), (j+1)*random.nextInt(20), String.valueOf((j+1)),String.valueOf((j+1)), String.valueOf((j+1))
-                    ,String.valueOf((j+1)), j+1, false, ""+(j+1), ""+(j+1), (i+1)*random.nextInt(20));
-                produtos.add(bolsa);
-                produtos.add(acessorio);
-                produtos.add(roupa);
+            while (enderecos.size() < 15){
+                Endereco endereco = new Endereco("Cep "+(j+1), "Pais "+(j+1), "Cidade "+(j+1)
+                    , "Bairro "+(j+1), "Complemento "+(j+1), j+1, "Estado "+(j+1), "Quadra "+(j+1));
+                enderecos.add(endereco);
                 j++;
             }
 
-            //gerar pedidos
-            int valor = 0;
-            for (int k = 0; k < produtos.size(); k++){
-                valor += produtos.get(i).getPreco_produto();
+
+            //gerar pagamentos
+            int ç = 0;
+            while (pagamentos.size() < 15){
+                Random random = new Random();
+                Pagamento pagamento = new Pagamento();
+                Random random1 = new Random();
+                String numtemp = "";
+                for (int m = 0; m < 16; m++){
+                    numtemp += String.valueOf(random1.nextInt(10));                
+                }
+                pagamento.adicionarPagamento(numtemp, nomes.get(random.nextInt(15)), "Bandeira: "+(ç+1), ""+(ç+1), (ç+1));
+                pagamentos.add(pagamento);
+                ç++;
             }
-            valor *= rand.nextInt(2);
-            Pedido pedido = new Pedido(valor, enderecos.get(rand.nextInt(15)), (i+1)*2
-            , pagamentos.get(rand.nextInt(15)), produtos);
-            pedidos.add(pedido);
-        }
+            
+
+            //gerar produtos
+            int z = 0;
+            while (produtos.size() < 15){
+                Random random = new Random();
+                Bolsa bolsa = new Bolsa("\nBolsa "+(z+1), String.valueOf((z+1)), (z+1)*random.nextInt(20), String.valueOf((z+1)),String.valueOf((z+1)), String.valueOf((z+1))
+                    ,String.valueOf((z+1)), z+1, false, String.valueOf((z+1)), String.valueOf((z+1)), (z+1)*random.nextInt(20));
+                Acessorio acessorio = new Acessorio("\nAcessorio "+(z+1), String.valueOf((z+1)), (z+1)*random.nextInt(20), String.valueOf((z+1)),String.valueOf((z+1)), String.valueOf((z+1))
+                    ,String.valueOf((j+1)), j+1, false, String.valueOf((j+1)), ""+(j+1), (j+1)*random.nextInt(20));
+                Roupa roupa = new Roupa("\nRoupa "+(z+1), String.valueOf((z+1)), (z+1)*random.nextInt(20), String.valueOf((z+1)),String.valueOf((z+1)), String.valueOf((z+1))
+                    ,String.valueOf((z+1)), z+1, false, ""+(z+1), ""+(z+1), (z+1)*random.nextInt(20));
+                produtos.add(bolsa);
+                produtos.add(acessorio);
+                produtos.add(roupa);
+                z++;
+            }
+
+
+            //gerar pedidos
+            int l = 0;
+            while (pedidos.size() < 15){
+                int valor = 0;
+                for (int k = 0; k < produtos.size(); k++){
+                    valor += produtos.get(k).getPreco_produto();
+                }
+                valor *= rand.nextInt(2);
+                Pedido pedido = new Pedido(valor, enderecos.get(rand.nextInt(15)), (l+1)*2
+                , pagamentos.get(rand.nextInt(15)), produtos, true);
+                pedidos.add(pedido);
+                l++;
+            }
+            
+
+            //gerar contas
+            int v = 0;
+            while (contas.size() < 15){
+                Conta_Cliente conta = new Conta_Cliente(nomes.get(rand.nextInt(15)), CPFS.get(rand.nextInt(15)), emails.get(rand.nextInt(15))
+                , telefones.get(rand.nextInt(15)), v+1, cupons, enderecos, pagamentos, pedidos);
+                contas.add(conta);
+                v++;
+            }
     }
-
-
-
-
-    public ArrayList<Pedido> visualizar(){
-        return pedidos;
-    }
-
-
-
-
-    
-    //mostra todos os produtos
-	public static String listarProdutos(ArrayList<Produto> produtos) {
-		for(Produto produto : produtos){
-			return produto.toString();
-        }
-        return "Sem produtos";
-    }
-	
 	
 	//buscar prosutos por categoria
-	public static String buscarCategoria(ArrayList<Produto> produtos, String categoria) {
-		for(Produto produto : produtos){
-			if(produto.getCategoria() == categoria) {
-				return produto.toString();
-			}
-	    }
-        return "Nao foi encontrado";
+	public String buscarCategoria(String categoria) {
+        for (int i = 0; i < produtos.size(); i++){
+            if (produtos.get(i).getCategoria().equals(categoria)){
+                return produtos.get(i).toString();
+            }
+        }
+        return "";
     }
 	
-	
 	//buscar produtos por nome
-	public static String buscarNome(ArrayList<Produto> produtos, String nome_produto) {
-		for(Produto produto : produtos){
-			if(produto.getNome_produto() == nome_produto) {
-                return produto.toString();
-			}
+	public String buscarNome(String nome) {
+		for (int i = 0; i < produtos.size(); i++){
+            if (produtos.get(i).getNome_produto().equals(nome)){
+                return produtos.get(i).toString();
+            }
         }
-        return "Nao foi encontrado";
+        return "";
+    }
+
+
+    public String buscarFavoritos() {
+		for (int i = 0; i < produtos.size(); i++){
+            if (produtos.get(i).isFavoritado()){
+                return produtos.get(i).toString();
+            }
+        }
+        return "";
     }
 	
 	
@@ -192,4 +212,59 @@ public class Dados {
 		
 		return quantidade;
 	}*/
+
+    //getters
+    public ArrayList<String> getNomes() {
+        return nomes;
+    }
+
+
+    public ArrayList<String> getCPFS() {
+        return CPFS;
+    }
+
+
+    public ArrayList<String> getEmails() {
+        return emails;
+    }
+
+
+    public ArrayList<String> getTelefones() {
+        return telefones;
+    }
+
+
+    public ArrayList<Cupom> getCupons() {
+        return cupons;
+    }
+
+
+    public ArrayList<Integer> getIds() {
+        return ids;
+    }
+
+
+    public ArrayList<Endereco> getEnderecos() {
+        return enderecos;
+    }
+
+
+    public ArrayList<Pagamento> getPagamentos() {
+        return pagamentos;
+    }
+
+
+    public ArrayList<Produto> getProdutos() {
+        return produtos;
+    }
+
+
+    public ArrayList<Pedido> getPedidos() {
+        return pedidos;
+    }
+
+
+    public ArrayList<Conta_Cliente> getContas() {
+        return contas;
+    }
 }
