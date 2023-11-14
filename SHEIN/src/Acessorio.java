@@ -24,7 +24,7 @@ public class Acessorio extends Produto{
 	}
 
 	public String toString() {
-		return "Produto: "+super.toString()+", Material: "+getMaterial()+", Tipo: "+getTipo();//+
+		return "\nProduto: "+super.toString()+" Material: "+getMaterial()+"\n"+" Tipo: "+getTipo()+"\n\n";//+
 				//", Quantidade: "+Estoque.quantidade_estoque(produtos, nome_produto);
 	}
     

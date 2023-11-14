@@ -4,21 +4,6 @@ import java.util.Random;
 
 public class Dados {
 
-    /*private ArrayList<Produto> produtos = new ArrayList<Produto>();
-    private int qntd_produtos = 0;
-    private ArrayList<Conta_Cliente> contas = new ArrayList<Conta_Cliente>();
-    private int qntd_contas = 0;
-    private ArrayList<Cupom> cupons = new ArrayList<Cupom>();
-    private int qntd_cupons = 0;
-    private ArrayList<Pedido> pedidos = new ArrayList<Pedido>();
-    private int qntd_pedidos = 0;
-    private ArrayList<Pagamento> pagamentos = new ArrayList<Pagamento>();
-    private int qntd_pagamentos = 0;
-    private ArrayList<Medida> medidas = new ArrayList<Medida>();
-    private int qntd_medidas = 0;
-    private ArrayList<Endereco> enderecos = new ArrayList<Endereco>();
-    private int qntd_endereco = 0;*/
-
     private ArrayList<String> primeiro_nome = new ArrayList<>(Arrays.asList("Alice","Bob","Charlie","Diana","Eva","Frank","Grace","Henry","Isabella","Jack","Kate","Liam","Mia","Noah","Olivia"));
     private ArrayList<String> segundo_nome = new ArrayList<>(Arrays.asList("Johnson","Smith","Williams","Brown","Davis","Miller","Wilson","Martinez","Thompson","Garcia","Rodriguez","Lopez","Lee","Perez","Scott"));
     private ArrayList<String> ddd = new ArrayList<>(Arrays.asList("11", "12", "13", "14", "15", "16", "17", "18", "19", "21", "22", "24", "27", "28","31", "32", "33", "34", "35", "37", "38", "41", "42", "43", "44", "45", "46", "47", "48","49", "51", "53", "54", "55", "61", "62", "63", "64", "65", "66", "67", "68", "69", "71","73", "74", "75", "77", "79", "81", "82", "83", "84", "85", "86", "87", "88", "89", "91","92", "93", "94", "95", "96", "97", "98", "99"));
@@ -32,8 +17,11 @@ public class Dados {
     private ArrayList<Endereco> enderecos = new ArrayList<Endereco>();
     private ArrayList<Pagamento> pagamentos = new ArrayList<Pagamento>();
     private ArrayList<Produto> produtos = new ArrayList<Produto>();
+    private ArrayList<Pedido> pedidos = new ArrayList<Pedido>();
 
     public void gerarDADOS(){
+
+
         // gerar cpfs
         String cpftemp = "";
         for (int i = 0; i < 15; i++){
@@ -52,6 +40,8 @@ public class Dados {
             CPFS.add(cpftemp);
             cpftemp = "";
         }
+
+
         // gerar nomes e emails
         String nometemp = "";
         String emailstemp = "";
@@ -70,6 +60,8 @@ public class Dados {
             nomes.add(nometemp);
             emails.add(emailstemp);
         }
+
+
         //gerar telefones
         String telefonestemp = "";
         Random rand = new Random();
@@ -88,19 +80,29 @@ public class Dados {
             }
             telefones.add(telefonestemp);
         }
+
+
         int idstemp = 0;
         for (int i = 0; i < 15; i++){
+
+
             //gerar cupons
             Cupom cupom = new Cupom("Cupom "+(i+1), (i+1)*2, "Descricao "+(i+1), i, i*3);
             cupons.add(cupom);
+
+
             //gerar ids
             Random random = new Random();
             idstemp = random.nextInt(1000);
             ids.add(idstemp);
+
+
             //gerar enderecos
             Endereco endereco = new Endereco("Cep "+(i+1), "Pais "+(i+1), "Cidade "+(i+1)
             , "Bairro "+(i+1), "Complemento "+(i+1), i+1, "Estado "+(i+1), "Quadra "+(i+1));
             enderecos.add(endereco);
+
+
             //gerar pagamentos
             Pagamento pagamento = new Pagamento();
             Random random1 = new Random();
@@ -110,24 +112,40 @@ public class Dados {
             }
             pagamento.adicionarPagamento(numtemp, nomes.get(random.nextInt(15)), "Bandeira: "+(i+1), ""+(i+1), (i+1));
             pagamentos.add(pagamento);
+            
+
             //gerar produtos
-            Bolsa bolsa = new Bolsa("Bolsa "+(i+1), String.valueOf((i+1)), (i+1)*random.nextInt(20), String.valueOf((i+1)),String.valueOf((i+1)), String.valueOf((i+1))
-            , String.valueOf((i+1)), i+1, false, String.valueOf((i+1)), String.valueOf((i+1)), (i+1)*random.nextInt(20));
-            //...
-            Acessorio acessorio = new Acessorio(numtemp, numtemp, idstemp, numtemp, cpftemp, nometemp, emailstemp, i, false, telefonestemp, numtemp, i);
-            Roupa roupa = new Roupa(numtemp, numtemp, idstemp, numtemp, cpftemp, nometemp, emailstemp, i, false, telefonestemp, numtemp, i);
-            produtos.add(bolsa);
+            int j = 0;
+            while (produtos.size() < 15){
+                Bolsa bolsa = new Bolsa("\nBolsa "+(j+1), String.valueOf((j+1)), (j+1)*random.nextInt(20), String.valueOf((j+1)),String.valueOf((j+1)), String.valueOf((j+1))
+                    ,String.valueOf((j+1)), j+1, false, String.valueOf((j+1)), String.valueOf((j+1)), (j+1)*random.nextInt(20));
+                Acessorio acessorio = new Acessorio("\nAcessorio "+(j+1), String.valueOf((j+1)), (j+1)*random.nextInt(20), String.valueOf((j+1)),String.valueOf((j+1)), String.valueOf((j+1))
+                    ,String.valueOf((j+1)), j+1, false, String.valueOf((j+1)), ""+(j+1), (i+1)*random.nextInt(20));
+                Roupa roupa = new Roupa("\nRoupa "+(j+1), String.valueOf((j+1)), (j+1)*random.nextInt(20), String.valueOf((j+1)),String.valueOf((j+1)), String.valueOf((j+1))
+                    ,String.valueOf((j+1)), j+1, false, ""+(j+1), ""+(j+1), (i+1)*random.nextInt(20));
+                produtos.add(bolsa);
+                produtos.add(acessorio);
+                produtos.add(roupa);
+                j++;
+            }
 
-
-
+            //gerar pedidos
+            int valor = 0;
+            for (int k = 0; k < produtos.size(); k++){
+                valor += produtos.get(i).getPreco_produto();
+            }
+            valor *= rand.nextInt(2);
+            Pedido pedido = new Pedido(valor, enderecos.get(rand.nextInt(15)), (i+1)*2
+            , pagamentos.get(rand.nextInt(15)), produtos);
+            pedidos.add(pedido);
         }
     }
 
 
 
 
-    public ArrayList<Produto> visualizar(){
-        return produtos;
+    public ArrayList<Pedido> visualizar(){
+        return pedidos;
     }
 
 
