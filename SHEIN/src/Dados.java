@@ -30,6 +30,8 @@ public class Dados {
     private ArrayList<Cupom> cupons = new ArrayList<Cupom>();
     private ArrayList<Integer> ids = new ArrayList<Integer>();
     private ArrayList<Endereco> enderecos = new ArrayList<Endereco>();
+    private ArrayList<Pagamento> pagamentos = new ArrayList<Pagamento>();
+    private ArrayList<Produto> produtos = new ArrayList<Produto>();
 
     public void gerarDADOS(){
         // gerar cpfs
@@ -88,17 +90,44 @@ public class Dados {
         }
         int idstemp = 0;
         for (int i = 0; i < 15; i++){
+            //gerar cupons
             Cupom cupom = new Cupom("Cupom "+(i+1), (i+1)*2, "Descricao "+(i+1), i, i*3);
             cupons.add(cupom);
+            //gerar ids
             Random random = new Random();
             idstemp = random.nextInt(1000);
             ids.add(idstemp);
+            //gerar enderecos
             Endereco endereco = new Endereco("Cep "+(i+1), "Pais "+(i+1), "Cidade "+(i+1)
             , "Bairro "+(i+1), "Complemento "+(i+1), i+1, "Estado "+(i+1), "Quadra "+(i+1));
             enderecos.add(endereco);
+            //gerar pagamentos
+            Pagamento pagamento = new Pagamento();
+            Random random1 = new Random();
+            String numtemp = "";
+            for (int j = 0; j < 16; j++){
+                numtemp += String.valueOf(random1.nextInt(10));                
+            }
+            pagamento.adicionarPagamento(numtemp, nomes.get(random.nextInt(15)), "Bandeira: "+(i+1), ""+(i+1), (i+1));
+            pagamentos.add(pagamento);
+            //gerar produtos
+            Bolsa bolsa = new Bolsa("Bolsa "+(i+1), String.valueOf((i+1)), (i+1)*random.nextInt(20), String.valueOf((i+1)),String.valueOf((i+1)), String.valueOf((i+1))
+            , String.valueOf((i+1)), i+1, false, String.valueOf((i+1)), String.valueOf((i+1)), (i+1)*random.nextInt(20));
             //...
+            Acessorio acessorio = new Acessorio(numtemp, numtemp, idstemp, numtemp, cpftemp, nometemp, emailstemp, i, false, telefonestemp, numtemp, i);
+            Roupa roupa = new Roupa(numtemp, numtemp, idstemp, numtemp, cpftemp, nometemp, emailstemp, i, false, telefonestemp, numtemp, i);
+            produtos.add(bolsa);
+
+
 
         }
+    }
+
+
+
+
+    public ArrayList<Produto> visualizar(){
+        return produtos;
     }
 
 

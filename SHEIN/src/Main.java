@@ -55,6 +55,9 @@ public class Main{
         pedido.adicionarProduto(w);
         pedido.adicionarProduto(e);
         System.out.println(pedido.toString());*/
+        Dados a = new Dados();
+        a.gerarDADOS();
+        System.out.println(a.visualizar());
         
     }
 }
