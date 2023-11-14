@@ -4,9 +4,11 @@ import java.util.Random;
 
 public class Dados {
 
+
     private ArrayList<String> primeiro_nome = new ArrayList<>(Arrays.asList("Alice","Bob","Charlie","Diana","Eva","Frank","Grace","Henry","Isabella","Jack","Kate","Liam","Mia","Noah","Olivia"));
     private ArrayList<String> segundo_nome = new ArrayList<>(Arrays.asList("Johnson","Smith","Williams","Brown","Davis","Miller","Wilson","Martinez","Thompson","Garcia","Rodriguez","Lopez","Lee","Perez","Scott"));
     private ArrayList<String> ddd = new ArrayList<>(Arrays.asList("11", "12", "13", "14", "15", "16", "17", "18", "19", "21", "22", "24", "27", "28","31", "32", "33", "34", "35", "37", "38", "41", "42", "43", "44", "45", "46", "47", "48","49", "51", "53", "54", "55", "61", "62", "63", "64", "65", "66", "67", "68", "69", "71","73", "74", "75", "77", "79", "81", "82", "83", "84", "85", "86", "87", "88", "89", "91","92", "93", "94", "95", "96", "97", "98", "99"));
+
 
     private ArrayList<String> nomes = new ArrayList<String>();
     private ArrayList<String> CPFS = new ArrayList<String>();
@@ -85,8 +87,6 @@ public class Dados {
 
         int idstemp = 0;
         
-
-
             //gerar cupons
             int d = 0;
             while (cupons.size() < 15){
@@ -179,8 +179,9 @@ public class Dados {
                 return produtos.get(i).toString();
             }
         }
-        return "";
+        return "Não foi encontrado";
     }
+
 	
 	//buscar produtos por nome
 	public String buscarNome(String nome) {
@@ -189,7 +190,7 @@ public class Dados {
                 return produtos.get(i).toString();
             }
         }
-        return "";
+        return "Não foi encontrado";
     }
 
 
@@ -199,20 +200,10 @@ public class Dados {
                 return produtos.get(i).toString();
             }
         }
-        return "";
+        return "Não foi encontrado";
     }
 	
 	
-	//conta quantos objetos foram adicionados por nome
-	/*public static int quantidade_estoque(ArrayList<Produto> produtos, String nome_produto) {
-		int quantidade = 0;
-		for(Produto produto : produtos)
-			if(produto.getNome_produto() == nome_produto)
-				quantidade++;
-		
-		return quantidade;
-	}*/
-
     //getters
     public ArrayList<String> getNomes() {
         return nomes;

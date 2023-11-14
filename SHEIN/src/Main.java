@@ -57,7 +57,7 @@ public class Main{
         System.out.println(pedido.toString());*/
         Dados a = new Dados();
         a.gerarDADOS();
-        System.out.println(a.buscarCategoria("1"));
+        System.out.println(a.buscarCategoria("2"));
         
     }
 }
