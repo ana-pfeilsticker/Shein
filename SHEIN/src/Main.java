@@ -54,10 +54,11 @@ public class Main{
         pedido.adicionarProduto(q);
         pedido.adicionarProduto(w);
         pedido.adicionarProduto(e);
-        System.out.println(pedido.toString());*/
+        System.out.println(pedido.toString());
         Dados a = new Dados();
         a.gerarDADOS();
-        System.out.println(a.buscarCategoria("2"));
+        System.out.println(a.buscarCategoria("2"));*/
         
+
     }
 }
