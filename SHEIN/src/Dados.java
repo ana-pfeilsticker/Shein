@@ -11,16 +11,27 @@ public class Dados {
 
 
     private ArrayList<String> nomes = new ArrayList<String>();
+    private int qntd_nomes = 0;
     private ArrayList<String> CPFS = new ArrayList<String>();
+    private int qntd_CPFS = 0;
     private ArrayList<String> emails = new ArrayList<String>();
+    private int qntd_emails = 0;
     private ArrayList<String> telefones = new ArrayList<String>();
+    private int qntd_telefones = 0;
     private ArrayList<Cupom> cupons = new ArrayList<Cupom>();
+    private int qntd_cupons = 0;
     private ArrayList<Integer> ids = new ArrayList<Integer>();
+    private int qntd_ids = 0;
     private ArrayList<Endereco> enderecos = new ArrayList<Endereco>();
+    private int qntd_enderecos = 0;
     private ArrayList<Pagamento> pagamentos = new ArrayList<Pagamento>();
+    private int qntd_pagamentos = 0;
     private ArrayList<Produto> produtos = new ArrayList<Produto>();
+    private int qntd_produtos = 0;
     private ArrayList<Pedido> pedidos = new ArrayList<Pedido>();
+    private int qntd_pedidos = 0;
     private ArrayList<Conta_Cliente> contas = new ArrayList<Conta_Cliente>();
+    private int qntd_contas = 0;
 
 
     public void gerarDADOS(){
@@ -42,6 +53,7 @@ public class Dados {
             }
             CPFS.add(cpftemp);
             cpftemp = "";
+            qntd_CPFS++;
         }
 
 
@@ -62,6 +74,8 @@ public class Dados {
             nometemp += segundo_nome.get(numeroAleatorio2);
             nomes.add(nometemp);
             emails.add(emailstemp);
+            qntd_emails++;
+            qntd_nomes++;
         }
 
 
@@ -82,6 +96,7 @@ public class Dados {
                 telefonestemp += numeroAleatorio4;
             }
             telefones.add(telefonestemp);
+            qntd_telefones++;
         }
 
 
@@ -93,6 +108,7 @@ public class Dados {
                 Cupom cupom = new Cupom("Cupom "+(d+1), (d+1)*2, "Descricao "+(d+1), d, d*3);
                 cupons.add(cupom);
                 d++;
+                qntd_cupons++;
             }
 
 
@@ -101,6 +117,7 @@ public class Dados {
                 Random random = new Random();
                 idstemp = random.nextInt(1000);
                 ids.add(idstemp);
+                qntd_ids++;
             }
 
 
@@ -111,6 +128,7 @@ public class Dados {
                     , "Bairro "+(j+1), "Complemento "+(j+1), j+1, "Estado "+(j+1), "Quadra "+(j+1));
                 enderecos.add(endereco);
                 j++;
+                qntd_enderecos++;
             }
 
 
@@ -127,6 +145,7 @@ public class Dados {
                 pagamento.adicionarPagamento(numtemp, nomes.get(random.nextInt(15)), "Bandeira: "+(ç+1), ""+(ç+1), (ç+1));
                 pagamentos.add(pagamento);
                 ç++;
+                qntd_pagamentos++;
             }
             
 
@@ -144,6 +163,7 @@ public class Dados {
                 produtos.add(acessorio);
                 produtos.add(roupa);
                 z++;
+                qntd_produtos += 3;
             }
 
 
@@ -159,6 +179,7 @@ public class Dados {
                 , pagamentos.get(rand.nextInt(15)), produtos, true);
                 pedidos.add(pedido);
                 l++;
+                qntd_pedidos++;
             }
             
 
@@ -169,6 +190,7 @@ public class Dados {
                 , telefones.get(rand.nextInt(15)), v+1, cupons, enderecos, pagamentos, pedidos);
                 contas.add(conta);
                 v++;
+                qntd_contas++;
             }
     }
 	
@@ -257,5 +279,61 @@ public class Dados {
 
     public ArrayList<Conta_Cliente> getContas() {
         return contas;
+    }
+
+    public ArrayList<String> getPrimeiro_nome() {
+        return primeiro_nome;
+    }
+
+    public ArrayList<String> getSegundo_nome() {
+        return segundo_nome;
+    }
+
+    public ArrayList<String> getDdd() {
+        return ddd;
+    }
+
+    public int getQntd_nomes() {
+        return qntd_nomes;
+    }
+
+    public int getQntd_CPFS() {
+        return qntd_CPFS;
+    }
+
+    public int getQntd_emails() {
+        return qntd_emails;
+    }
+
+    public int getQntd_telefones() {
+        return qntd_telefones;
+    }
+
+    public int getQntd_cupons() {
+        return qntd_cupons;
+    }
+
+    public int getQntd_ids() {
+        return qntd_ids;
+    }
+
+    public int getQntd_enderecos() {
+        return qntd_enderecos;
+    }
+
+    public int getQntd_pagamentos() {
+        return qntd_pagamentos;
+    }
+
+    public int getQntd_produtos() {
+        return qntd_produtos;
+    }
+
+    public int getQntd_pedidos() {
+        return qntd_pedidos;
+    }
+
+    public int getQntd_contas() {
+        return qntd_contas;
     }
 }
