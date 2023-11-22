@@ -55,7 +55,8 @@ public class Main{
                     break;
                 case 5:
                     System.out.println("Qual o seu nome? ");
-                    String name = scanner.next();
+                    String name = scanner.nextLine();
+                    scanner.nextLine();
                     System.out.println("Qual o seu cpf? ");
                     String cpf = scanner.next();
                     System.out.println("Qual o seu email? ");
@@ -143,7 +144,8 @@ public static void adicionarEndereco(ArrayList<Conta_Cliente> contas, int opcaoC
     String quadra = scanner.next();
 
     Endereco ender = new Endereco(cep, pais, cidade, bairro, compl, num, estado, quadra);
-    contas.get(opcaoConta).getEnderecos().add(ender);
+    
+    contas.get(opcaoConta-1).getEnderecos().add(ender);
 
 //    scanner.close();
 }
@@ -154,6 +156,7 @@ public static void exibirContas(ArrayList<Conta_Cliente> contas, ArrayList<Cupom
 	for(Conta_Cliente conta: contas) {
 		if(opcaoConta == conta.getId_Conta()) {
 		System.out.println(conta.infoConta());
+        contas.get(opcaoConta-1).setEnderecos(new ArrayList<>());
 		
 		int opcao1 = 0;
 		do{ 
@@ -167,6 +170,8 @@ public static void exibirContas(ArrayList<Conta_Cliente> contas, ArrayList<Cupom
             System.out.println("4. Ver todos os Pedidos");
             System.out.println("5. Visualizar Pedido");
             System.out.println("6. Cadastrar Endereco");
+            System.out.println("7. Cadastrar Medidas");
+            System.out.println("8. Editar Endereco");
             System.out.println("0. Voltar");
             System.out.print("Escolha uma Opcao: ");
             
@@ -182,8 +187,8 @@ public static void exibirContas(ArrayList<Conta_Cliente> contas, ArrayList<Cupom
 	                	System.out.print("------------------------------------------------------------------\n");
                     break;
                 case 2:
-	                	for(Endereco endereco: contas.get(opcaoConta).getEnderecos()) {
-	                		System.out.println(endereco.visualizarEndereco());
+	                	for(Endereco endereco: contas.get(opcaoConta-1).getEnderecos()) {
+	                		System.out.println(endereco.visualizarEndereco()+"ID do endereco: "+(contas.get(opcaoConta-1).getEnderecos().indexOf(endereco)+1));
 	                	}
 //	                public static void crudEndereco();
                 	
@@ -222,6 +227,20 @@ public static void exibirContas(ArrayList<Conta_Cliente> contas, ArrayList<Cupom
                 case 6:
                     adicionarEndereco(contas, opcaoConta);
                     break;
+                case 7:
+                    adicionarMedidas(scanner);
+                    contas.get(opcaoConta-1).setBraco(13);
+                    break;
+                case 8:
+                    String ender = "";
+                    for(Endereco endereco: contas.get(opcaoConta-1).getEnderecos()) {
+	                		System.out.println(endereco.visualizarEndereco()+"ID do endereco: "+(contas.get(opcaoConta-1).getEnderecos().indexOf(endereco)+1)+"\n");
+	                	};
+                    System.out.println("------------------------------------------------------------------\n");
+                    System.out.println("Qual o ID do endereço que você deseja editar? ");
+                    ender = scanner.nextLine();
+                    break;
+
                 case 0:
                 		break;
 
@@ -244,5 +263,9 @@ public static void exibirContas(ArrayList<Conta_Cliente> contas, ArrayList<Cupom
 		    System.out.println(pedido.toString());
 		    System.out.println("----------------------------------------------------------------------------------------------");
 	    }
+    }
+
+    public static void adicionarMedidas(Scanner scanner){
+        
     }
 }
