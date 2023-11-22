@@ -70,7 +70,7 @@ public class Main{
                 	System.out.println("Saindo. Volte Sempre !");
                 	break;
                 default:
-                    System.out.println("Opção Inválida !");
+                    System.out.println("Opcao Invalida !");
             }
         }while(opcao != 0);
    }
@@ -145,8 +145,7 @@ public static void exibirContas(ArrayList<Conta_Cliente> contas, ArrayList<Cupom
 		System.out.println(conta.infoConta());
 		
 		Scanner scanner = new Scanner(System.in);
-        int opcao;
-		
+		int opcao1 = 0;
 		do{ 
 			
 			System.out.print("\n");
@@ -161,12 +160,10 @@ public static void exibirContas(ArrayList<Conta_Cliente> contas, ArrayList<Cupom
             System.out.print("Escolha uma Opcao: ");
             
             
-            //scanner.nextLine();
-            
-            opcao = scanner.nextInt();
+            opcao1 = scanner.nextInt();
             System.out.print("\n");
             
-            switch(opcao){
+            switch(opcao1){
                 case 1:
                 	for(Cupom cupom: contas.get(opcaoConta).getCupons()) {
                 		System.out.println(cupom.toString()); //cupom.toString()
@@ -209,7 +206,6 @@ public static void exibirContas(ArrayList<Conta_Cliente> contas, ArrayList<Cupom
                 case 5:
                     
                 case 6:
-                    
                     adicionarEndereco(contas, opcaoConta);
                     break;
                 case 0:
@@ -218,7 +214,7 @@ public static void exibirContas(ArrayList<Conta_Cliente> contas, ArrayList<Cupom
                 default:
                     System.out.println("Opcao Invalida!");
             }
-        }while(opcao != 0);
+        }while(opcao1 != 0);
 		
 		
 		
