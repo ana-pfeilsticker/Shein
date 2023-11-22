@@ -24,7 +24,7 @@ public class Bolsa extends Produto{
 	}
 	
     public String toString() {
-		return "\nProduto: "+super.toString()+" Material: "+getMaterial()+"\n"+" Tamanho da Alça: "+getTamanho_alca()+"\n\n";//+
+		return "\n Produto: "+super.toString()+" Material: "+getMaterial()+"\n"+" Tamanho da Alça: "+getTamanho_alca()+"\n\n";//+
 				//", Quantidade: "+Estoque.quantidade_estoque(produtos, nome_produto);
 	}
 }

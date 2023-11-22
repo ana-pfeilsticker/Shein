@@ -20,6 +20,17 @@ public class Endereco {
         this.estado = estado;
         this.quadra = quadra;
     }
+    public void adicionarEndereco(String cep, String pais, String cidade, String bairro, String complemento, int numero,
+            String estado, String quadra) {
+        this.cep = cep;
+        this.pais = pais;
+        this.cidade = cidade;
+        this.bairro = bairro;
+        this.complemento = complemento;
+        this.numero = numero;
+        this.estado = estado;
+        this.quadra = quadra;
+    }
 
     public String visualizarEndereco() {
         return "\nEndereco:\n\n"+ quadra +" "+ complemento+" Numero "+numero+"\n"+bairro+" "+cidade+"\n"+cep+"\n"+estado + " "+pais + "\n";

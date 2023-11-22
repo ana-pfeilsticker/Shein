@@ -2,8 +2,6 @@ import java.util.*;
 
 public class Main{
 		
-	
-	
 	public static void main(String[] args) throws Exception {
         Dados dados = new Dados();
         dados.gerarDADOS();
@@ -14,47 +12,67 @@ public class Main{
         ArrayList<Endereco> enderecos = dados.getEnderecos();
         ArrayList<Pagamento> pagamentos = dados.getPagamentos();
         
-        
+
         Scanner scanner = new Scanner(System.in);
+        Scanner scanner1 = new Scanner(System.in);
         int opcao, opcaoConta;
         String categoria;
-
-
+        String nome;
+        System.out.println("\nBem vindo a Shein\n");
         do{
-        	System.out.println("Bem vindo a Shein\n");
+        	
             System.out.println("---------------MENU---------------");
             System.out.println("1. Visualizar Conta");
-            System.out.println("2. Visualizar Pedido");
-            System.out.println("3. Ver Todos os Produtos");
-            System.out.println("4. Ver produtos por categoria");
-            System.out.println("5. Sair");
+            System.out.println("2. Ver Todos os Produtos");
+            System.out.println("3. Ver produtos por categoria");
+            System.out.println("4. Ver produtos por nome");
+            System.out.println("5. Cadastrar Conta");
+            System.out.println("0. Sair");
             System.out.print("Escolha uma Opcao: ");
             opcao = scanner.nextInt();
             switch(opcao){
                 case 1:
-                	System.out.println("Digite o ID da conta: (1 - 15)");
+                    scanner.nextLine();
+                	System.out.println("Digite o ID da conta: (1 - "+contas.size()+")");
                 	opcaoConta = scanner.nextInt();
                 	exibirContas(contas, cupons, enderecos, pagamentos, pedidos, opcaoConta);
                     break;
                 case 2:
-                	exibirPedidos(pedidos);
-                    break;
-                case 3:
                 	exibirProdutos(produtos);
                     break;
-                case 4:
+                case 3:
+                    scanner.nextLine();
                 	System.out.println("Digite a categoria desejada: (Bolsa, Acessorio, Roupa)");
                 	categoria = scanner.next();
                     categoria = categoria.substring(0, 1).toUpperCase() + categoria.substring(1).toLowerCase();
                     exibirProdutosCategoria(produtos, categoria);
                     break;
+                case 4:
+                    scanner.nextLine();
+                    System.out.println("Digite o nome desejado: (Bolsa 1, Acessorio 1, Roupa 1...)");
+                	nome = scanner.next().toString();
+                    System.out.println(exibirProdutosNome(produtos, nome));
+                    break;
                 case 5:
+                    System.out.println("Qual o seu nome? ");
+                    String name = scanner1.next();
+                    System.out.println("Qual o seu cpf? ");
+                    String cpf = scanner1.next();
+                    System.out.println("Qual o seu email? ");
+                    String email = scanner1.next();
+                    System.out.println("Qual o seu telefone? ");
+                    String telefone = scanner1.next();
+                    
+                    Conta_Cliente conta = new Conta_Cliente(name, cpf, email, telefone, contas.size()+1, cupons, null, null, null);
+                    contas.add(conta);
+                    break;
+                case 0:
                 	System.out.println("Saindo. Volte Sempre !");
                 	break;
                 default:
                     System.out.println("Opção Inválida !");
             }
-        }while(opcao != 5);
+        }while(opcao != 0);
    }
 
 
@@ -65,17 +83,60 @@ public static void exibirProdutos(ArrayList<Produto> produtos) {
     }
 }
 
-public static void exibirProdutosCategoria(ArrayList<Produto> produtos, String categoria) {
-	int a = 0;
+public static String exibirProdutosCategoria(ArrayList<Produto> produtos, String categoria) {
 	for (int i = 0; i < produtos.size(); i++){
         if (produtos.get(i).getCategoria().equals(categoria)){
-            System.out.println(produtos.get(i).toString());
+            return " "+produtos.get(i).toString();
         }
-        a++;
     }
-	if(a == 0)
-		System.out.println("Nâo encontrado !");
+	return "Nao encontrado!";
 }
+
+public static String exibirProdutosNome(ArrayList<Produto> produtos, String nome) {
+	for (int i = 0; i < produtos.size(); i++){
+        if (produtos.get(i).getNome_produto().equals(nome)){
+            return " "+produtos.get(i).toString();
+        }
+    }
+	return "Nao encontrado!";
+}
+
+public static String exibirProdutosfavoritos(ArrayList<Produto> produtos) {
+	for (int i = 0; i < produtos.size(); i++){
+        if (produtos.get(i).isFavoritado()){
+            return " "+produtos.get(i).toString();
+        }
+    }
+	return "Nao encontrado!";
+}
+
+public static void adicionarEndereco(ArrayList<Conta_Cliente> contas, int opcaoConta){
+
+    Scanner scanner = new Scanner(System.in);
+    Scanner scanner1 = new Scanner(System.in);
+    System.out.println("Qual o seu cep? ");
+    String cep = scanner.next();
+    System.out.println("Qual o seu Pais? ");
+    String pais = scanner.next();
+    System.out.println("Qual a sua cidade? ");
+    String cidade = scanner.next();
+    System.out.println("Qual o seu bairro? ");
+    String bairro = scanner.next();
+    System.out.println("Complemento? ");
+    String compl = scanner.next();
+    System.out.println("Qual o numero? ");
+    int num = scanner1.nextInt();
+    System.out.println("Qual o estado? ");
+    String estado = scanner.next();
+    System.out.println("Qual a quadra? ");
+    String quadra = scanner.next();
+    scanner.close();
+    scanner1.close();
+    Endereco ender = new Endereco(cep, pais, cidade, bairro, compl, num, estado, quadra);
+    contas.get(opcaoConta).getEnderecos().add(ender);
+
+}
+
 
 public static void exibirContas(ArrayList<Conta_Cliente> contas, ArrayList<Cupom> cupons, ArrayList<Endereco> enderecos, ArrayList<Pagamento> pagamentos, ArrayList<Pedido> pedidos, int opcaoConta) {
 
@@ -94,7 +155,9 @@ public static void exibirContas(ArrayList<Conta_Cliente> contas, ArrayList<Cupom
             System.out.println("2. Visualizar Enderecos");
             System.out.println("3. Visualizar Pagamentos");
             System.out.println("4. Ver todos os Pedidos");
-            System.out.println("5. Voltar");
+            System.out.println("5. Visualizar Pedido");
+            System.out.println("6. Cadastrar Endereco");
+            System.out.println("0. Voltar");
             System.out.print("Escolha uma Opcao: ");
             
             
@@ -144,11 +207,18 @@ public static void exibirContas(ArrayList<Conta_Cliente> contas, ArrayList<Cupom
                 	System.out.print("\n------------------------------------------------------------------\n");
                     break;
                 case 5:
+                    
+                case 6:
+                    
+                    adicionarEndereco(contas, opcaoConta);
+                    break;
+                case 0:
                 	break;
+
                 default:
                     System.out.println("Opcao Invalida!");
             }
-        }while(opcao != 5);
+        }while(opcao != 0);
 		
 		
 		
@@ -159,10 +229,10 @@ public static void exibirContas(ArrayList<Conta_Cliente> contas, ArrayList<Cupom
 	
 }
 
-public static void exibirPedidos(ArrayList<Pedido> pedidos) {
-	for(Pedido pedido: pedidos) {
-		System.out.println(pedido.toString());
-		System.out.println("----------------------------------------------------------------------------------------------");
-	}
-}
+    public static void exibirPedidos(ArrayList<Pedido> pedidos) {
+	    for(Pedido pedido: pedidos) {
+		    System.out.println(pedido.toString());
+		    System.out.println("----------------------------------------------------------------------------------------------");
+	    }
+    }
 }

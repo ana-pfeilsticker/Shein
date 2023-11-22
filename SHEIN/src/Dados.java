@@ -122,14 +122,14 @@ public class Dados {
 
 
             //gerar enderecos
-            int j = 0;
+            /*int j = 0;
             while (enderecos.size() < 15){
                 Endereco endereco = new Endereco("Cep "+(j+1), "Pais "+(j+1), "Cidade "+(j+1)
                     , "Bairro "+(j+1), "Complemento "+(j+1), j+1, "Estado "+(j+1), "Quadra "+(j+1));
                 enderecos.add(endereco);
                 j++;
                 qntd_enderecos++;
-            }
+            }*/
 
 
             //gerar pagamentos
@@ -153,11 +153,11 @@ public class Dados {
             int z = 0;
             while (produtos.size() < 15){
                 Random random = new Random();
-                Bolsa bolsa = new Bolsa("\n Bolsa "+(z+1), "Bolsa", (z+1)*random.nextInt(20), String.valueOf((z+1)),String.valueOf((z+1)), String.valueOf((z+1))
+                Bolsa bolsa = new Bolsa("Bolsa"+(z+1), "Bolsa", (z+1)*random.nextInt(20), String.valueOf((z+1)),String.valueOf((z+1)), String.valueOf((z+1))
                     ,String.valueOf((z+1)), z+1, false, String.valueOf((z+1)), String.valueOf((z+1)), (z+1)*random.nextInt(20));
-                Acessorio acessorio = new Acessorio("\n Acessorio "+(z+1), "Acessorio", (z+1)*random.nextInt(20), String.valueOf((z+1)),String.valueOf((z+1)), String.valueOf((z+1))
-                    ,String.valueOf((j+1)), j+1, false, String.valueOf((j+1)), ""+(j+1), (j+1)*random.nextInt(20));
-                Roupa roupa = new Roupa("\n Roupa "+(z+1),"Roupa", (z+1)*random.nextInt(20), String.valueOf((z+1)),String.valueOf((z+1)), String.valueOf((z+1))
+                Acessorio acessorio = new Acessorio("Acessorio"+(z+1), "Acessorio", (z+1)*random.nextInt(20), String.valueOf((z+1)),String.valueOf((z+1)), String.valueOf((z+1))
+                    ,String.valueOf((z+1)), z+1, false, String.valueOf((z+1)), ""+(z+1), (z+1)*random.nextInt(20));
+                Roupa roupa = new Roupa("Roupa"+(z+1),"Roupa", (z+1)*random.nextInt(20), String.valueOf((z+1)),String.valueOf((z+1)), String.valueOf((z+1))
                     ,String.valueOf((z+1)), z+1, false, ""+(z+1), ""+(z+1), (z+1)*random.nextInt(20));
                 produtos.add(bolsa);
                 produtos.add(acessorio);
@@ -175,7 +175,7 @@ public class Dados {
                     valor += produtos.get(k).getPreco_produto();
                 }
                 valor *= rand.nextInt(2);
-                Pedido pedido = new Pedido(valor, enderecos.get(rand.nextInt(15)), (l+1)*2
+                Pedido pedido = new Pedido(valor, null, (l+1)*2
                 , pagamentos.get(rand.nextInt(15)), produtos, true);
                 pedidos.add(pedido);
                 l++;

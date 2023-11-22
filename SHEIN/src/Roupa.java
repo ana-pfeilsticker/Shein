@@ -23,7 +23,6 @@ public class Roupa extends Produto{
 	}
 	@Override
 	public String toString() {
-		return "\nProduto: " +super.toString()+" Tecido: "+getTecido()+"\n"+" Tipo: "+getTipo()+"\n\n";//+
-				//", Quantidade: "+Estoque.quantidade_estoque(produtos, nome_produto);
+		return "\n Produto: " +super.toString()+" Tecido: "+getTecido()+"\n"+" Tipo: "+getTipo()+"\n";
 	}
 }
