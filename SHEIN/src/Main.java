@@ -14,7 +14,7 @@ public class Main{
         
 
         Scanner scanner = new Scanner(System.in);
-        Scanner scanner1 = new Scanner(System.in);
+        
         int opcao, opcaoConta;
         String categoria;
         String nome;
@@ -55,13 +55,13 @@ public class Main{
                     break;
                 case 5:
                     System.out.println("Qual o seu nome? ");
-                    String name = scanner1.next();
+                    String name = scanner.next();
                     System.out.println("Qual o seu cpf? ");
-                    String cpf = scanner1.next();
+                    String cpf = scanner.next();
                     System.out.println("Qual o seu email? ");
-                    String email = scanner1.next();
+                    String email = scanner.next();
                     System.out.println("Qual o seu telefone? ");
-                    String telefone = scanner1.next();
+                    String telefone = scanner.next();
                     
                     Conta_Cliente conta = new Conta_Cliente(name, cpf, email, telefone, contas.size()+1, cupons, null, null, null);
                     contas.add(conta);
@@ -144,9 +144,9 @@ public static void exibirContas(ArrayList<Conta_Cliente> contas, ArrayList<Cupom
 		if(opcaoConta == conta.getId_Conta()) {
 		System.out.println(conta.infoConta());
 		
-		Scanner scanner = new Scanner(System.in);
 		int opcao1 = 0;
 		do{ 
+            
 			
 			System.out.print("\n");
 			
@@ -159,7 +159,7 @@ public static void exibirContas(ArrayList<Conta_Cliente> contas, ArrayList<Cupom
             System.out.println("0. Voltar");
             System.out.print("Escolha uma Opcao: ");
             
-            
+            Scanner scanner = new Scanner(System.in);
             opcao1 = scanner.nextInt();
             System.out.print("\n");
             
