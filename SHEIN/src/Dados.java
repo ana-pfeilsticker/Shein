@@ -187,7 +187,7 @@ public class Dados {
             int v = 0;
             while (contas.size() < 15){
                 Conta_Cliente conta = new Conta_Cliente(nomes.get(rand.nextInt(15)), CPFS.get(rand.nextInt(15)), emails.get(rand.nextInt(15))
-                , telefones.get(rand.nextInt(15)), v, cupons, enderecos, pagamentos, pedidos);
+                , telefones.get(rand.nextInt(15)), v+1, cupons, enderecos, pagamentos, pedidos);
                 contas.add(conta);
                 v++;
                 qntd_contas++;
@@ -224,6 +224,10 @@ public class Dados {
         }
         return "Não foi encontrado";
     }
+    
+    //remocao, exclusao e edicao de Enderecos
+//    public void crudEndereco()
+    
 	
 	
     //getters
