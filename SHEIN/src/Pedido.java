@@ -8,7 +8,11 @@ public class Pedido {
     private Pagamento pagamento;
     private ArrayList<Produto> produtos = new ArrayList<Produto>();
     private boolean finalizado;
+    private int qntdprod;
 
+    public int getQntdprod() {
+        return qntdprod;
+    }
     public boolean isFinalizado() {
         return finalizado;
     }
@@ -56,6 +60,7 @@ public class Pedido {
     }
     public void adicionarProduto(Produto o){
         produtos.add(o);
+        qntdprod++;
     }
     @Override
     public String toString() {

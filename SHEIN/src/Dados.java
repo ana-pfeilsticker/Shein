@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Dados {
 
@@ -142,7 +143,7 @@ public class Dados {
                 for (int m = 0; m < 16; m++){
                     numtemp += String.valueOf(random1.nextInt(10));                
                 }
-                pagamento.adicionarPagamento(numtemp, nomes.get(random.nextInt(15)), "Bandeira: "+(ç+1), ""+(ç+1), (ç+1));
+                pagamento.adicionarPagamento(numtemp, nomes.get(random.nextInt(15)), ""+(ç+1), ""+(ç+1), (ç+1));
                 pagamentos.add(pagamento);
                 ç++;
                 qntd_pagamentos++;
@@ -225,11 +226,26 @@ public class Dados {
         return "Não foi encontrado";
     }
     
-    //remocao, exclusao e edicao de Enderecos
-//    public void crudEndereco()
-    
-	
-	
+    public void exibirProdutos(){
+        for (Produto produto : produtos) {
+            System.out.println(produto.toString() + "------------------------------------------------------------------------------------");
+        }
+    }
+    public void exibirProdutoCategoria(String categoria){
+        for (Produto produto : produtos){
+            if (produto.getCategoria().equals(categoria)){
+                System.out.println(produto.toString() + "------------------------------------------------------------------------------------");
+            }
+        }
+    }
+    public void exibirProdutoNome(String nome){
+        for (Produto produto : produtos){
+            if (produto.getNome_produto().equals(nome)){
+                System.out.println(produto.toString() + "------------------------------------------------------------------------------------");
+            }
+        }
+    }
+
     //getters
     public ArrayList<String> getNomes() {
         return nomes;

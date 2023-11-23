@@ -47,7 +47,7 @@ public class Pagamento {
     @Override
     public String toString() {
         
-        return "\nTitular: " + nome_titular +"\n"+"Numero do cartao: " + num_cartao +"\n" + bandeira+"\n"
+        return "\nTitular: " + nome_titular +"\n"+"Numero do cartao: " + num_cartao +"\n" + "Bandeira: " + bandeira+"\n"
                 + "Vencimento: " + vencimento +"\n" + "Codigo de seguranca: " + cod_seg;
     }
 

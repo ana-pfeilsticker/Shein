@@ -14,8 +14,15 @@ public class Conta_Cliente extends Medida{
     }
     private ArrayList<Pagamento> pagamentos = new ArrayList<Pagamento>();
     private ArrayList<Pedido> pedidos = new ArrayList<Pedido>();
+    private Pedido pedidoatual;
     
     
+    public Pedido getPedidoatual() {
+        return pedidoatual;
+    }
+    public void setPedidoatual(Pedido pedidoatual) {
+        this.pedidoatual = pedidoatual;
+    }
     public int getId_Conta() {
 		return id_Conta;
 	}

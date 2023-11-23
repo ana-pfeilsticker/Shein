@@ -16,7 +16,11 @@ public abstract class Medida {
         double proximidadePerna = 100 - (Math.abs(medidasPadrao[4] - comprimento_perna) / medidasPadrao[4]) * 100;
         double mediaProximidade = (proximidadeBusto + proximidadeCintura + proximidadeQuadril + proximidadeBraco + proximidadePerna) / 5;
 
-        if (mediaProximidade >= 85) {
+        if (busto == 0 || cintura == 0 || quadril == 0 || braco == 0 || comprimento_perna == 0) {
+            return "Nao há medidas";
+        }
+
+        else if (mediaProximidade >= 85) {
             return "GG";
         } else if (mediaProximidade >= 70) {
             return "G";
@@ -58,5 +62,10 @@ public abstract class Medida {
     }
     public void setComprimento_perna(double comprimento_perna) {
         this.comprimento_perna = comprimento_perna;
+    }
+
+    public String visualizarMedidas() {
+        return "\nComprimento do busto: " + busto +"\n"+"Medida da cintura: " + cintura + "\n" + "Medida do quadril: " + quadril + "\n" + 
+        "Comprimento do braco: " + braco + "\n" + "Comprimento da perna: " + comprimento_perna;
     }
 }
